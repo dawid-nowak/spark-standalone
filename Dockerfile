@@ -1,9 +1,9 @@
-#FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk
 #RUN apk --update add bash 
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
 MAINTAINER Dawid Nowak <nowakd@gmail.com>>
 #RUN apt-get update && apt-get dist-upgrade && apt-get install -y openjdk-8-jdk emacs
-RUN apt-get update && apt-get install -y openjdk-8-jdk
+#RUN apt-get update && apt-get install -y openjdk-8-jdk
 #RUN apt-get update && apt-get install -y openjdk-8-jre
 #RUN apt-get install -y openjdk-8-jre
 #RUN apt-get update && apt-get install -y netbase net-tools netcat iputils-ping
