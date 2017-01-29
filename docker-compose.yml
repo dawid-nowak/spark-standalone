@@ -5,6 +5,8 @@ services:
     container_name: spark-master
     entrypoint: /opt/bootstrap-master.sh
     image: spark-master:2.1
+    volumes:
+      - data-volume:/var/data
     
   spark-slave:
     build: .
@@ -12,4 +14,8 @@ services:
     entrypoint: /opt/bootstrap-slave.sh
     depends_on:
       - spark-master
-      
+    volumes:
+      - data-volume:/var/data
+        
+volumes:
+  data-volume:
