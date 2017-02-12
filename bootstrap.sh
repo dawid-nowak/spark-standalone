@@ -6,7 +6,7 @@ then
     echo "Running as Master"
     /opt/spark-latest/sbin/start-master.sh
 else
-    echo "Running as Worker $SPARK_MASTER_IP" 
+    echo "Running as Worker" 
     /opt/spark-latest/sbin/start-slave.sh spark-master:7077  
 fi
-cat
+while true; do sleep 1000; done

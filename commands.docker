@@ -1,0 +1,7 @@
+
+docker-compose --project-name spark build
+docker-compose --project-name spark up -d
+docker-compose --project-name spark scale spark-node=3
+docker-compose --project-name spark kill
+
+docker rm $(docker ps -a -q)

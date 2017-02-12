@@ -1,21 +1,19 @@
 version: '2'
 services:    
   spark-master:
-    build: .
     container_name: spark-master
-    entrypoint: /opt/bootstrap-master.sh
-    image: spark-master:2.1
+    image: dawidnowak/spark-standalone:2.1
+    environment:
+      SPARK_MODE: master
     volumes:
-      - data-volume:/var/data
+      - data-volume:/var/spark_data
     
-  spark-slave:
-    build: .
-    image: spark-slave:2.1
-    entrypoint: /opt/bootstrap-slave.sh
+  spark-node:
+    image: dawidnowak/spark-standalone:2.1
     depends_on:
       - spark-master
     volumes:
-      - data-volume:/var/data
+      - data-volume:/var/spark_data
         
 volumes:
   data-volume:
