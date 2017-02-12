@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk
 MAINTAINER Dawid Nowak <nowakd@gmail.com>>
-COPY opt/spark-2.1.0-bin-hadoop2.7.tgz /opt/spark-2.1.0-bin-hadoop2.7.tgz
+RUN wget http://mirrors.whoishostingthis.com/apache/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz -P /opt/
 RUN tar xfz /opt/spark-2.1.0-bin-hadoop2.7.tgz -C /opt
 RUN ln -s /opt/spark-2.1.0-bin-hadoop2.7 /opt/spark-latest
 COPY ./spark-conf/* /opt/spark-latest/conf/
